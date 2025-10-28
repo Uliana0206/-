@@ -2,13 +2,14 @@ import telebot
 from telebot import types
 import opred
 import tok
-import primer
+import fich
 
 bot = telebot.TeleBot(tok.token)
 
 @bot.message_handler(commands=['start'])
 def main(message):
-    bot.send_message(message.chat.id, "Здравствуйте!")
+    bot.send_message(message.chat.id, "Здравствуйте! Я - СленГид, чат-бот, созданый для того, чтобы помочь вам понимать сленг!")
+    bot.send_message(message.chat.id, 'Я не только расскажу вам, что значит данное слово, но и преведу пример предложения с этим словом')
     bot.send_message(message.chat.id, "Вы можете выбрать слово из списка или написать свое")
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton('Да', callback_data='yes'))
@@ -18,7 +19,8 @@ def main(message):
     @bot.callback_query_handler(func=lambda callback: True)
     def callback(callback):
         if callback.data == "yes":
-            bot.send_message(message.chat.id, "Список:Альтушка, Байтить, Вайб, Варик, Душнила, Жиза, Задрот, Запилить, Имба, Кринж, Криповый, Лейм, Мем, Мем, Пруфы, Чекать, Сас, Форсить, Фрик, Чиллить, Читер, ЧСВ, Шеймить, Шипперить")
+            bot.send_message(message.chat.id,
+                             "Список:Альтушка, Баг, Байтить, Вайб, Варик, Донатить, Душнила, Жиза, Задрот, Запилить, Зашквар, Зумер, Ивейтить, Имба, Кринж, Криповый, Лейм, ЛС, Мем, Мерч, Муд, Мьют, Пруфы, Пушка, Рак, Рандом, Рофл, Сас, Сигма, Стэнить, Тейк, Топ, Треш, Ту мач, Фича, Форсить, Фрик, Хейтер, Чекать, Чиллить, Читер, ЧСВ, Шарить, Шеймить, Шипперить")
             bot.send_message(message.chat.id, "Введите интересующее вас слово с заглавной буквы")
         else:
             bot.send_message(message.chat.id, "Введите интересующее вас слово с заглавной буквы")
@@ -28,107 +30,57 @@ def main(message):
 def lalala(message):
     if message.chat.type == 'private':
         if message.text == "Вайб" or message.text == "Плюс вайб" or message.text == "Минус вайб" or message.text == "Вайбовый":
-            bot.send_message(message.chat.id, opred.vibe)
-            bot.send_message(message.chat.id, primer.vibepr)
-            bot.send_message(message.chat.id, "Так же слово Вайб используется в словосочитаниях ПЛЮС ВАЙБ и МИНУС ВАЙБ")
-            bot.send_message(message.chat.id, "Минус вайб-ситуация огорчает,ухудшается общее эмоциональное состояние")
-            bot.send_message(message.chat.id, "Плюс вайб-настроение поднимается,ситуация порадовала")
+            fich.vibe(message)
         elif message.text == "Имба" or message.text == "Имбовый" or message.text == "Имбища":
-            bot.send_message(message.chat.id, opred.imba)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.imbapr)
+            fich.imba(message)
         elif message.text == "Криповый":
-            bot.send_message(message.chat.id, opred.krip)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.krippr)
+            fich.krip(message)
         elif message.text == "Лейм":
-            bot.send_message(message.chat.id, opred.lim)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.limpr)
+            fich.lim(message)
         elif message.text == "Сас" or message.text == "Сасный":
-            bot.send_message(message.chat.id, opred.sas)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.saspr)
+            fich.sas(message)
         elif message.text == "Шеймить":
-            bot.send_message(message.chat.id, opred.shim)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.shimpr)
+            fich.shim(message)
         elif message.text == "Шипперить" or message.text == "Шип" or message.text == "Шипирить" or message.text == "Шипп":
-           bot.send_message(message.chat.id, opred.ship)
-           bot.send_message(message.chat.id, "Пример:")
-           bot.send_message(message.chat.id, primer.shippr)
+           fich.ship(message)
         elif message.text == "Чиллить" or message.text == "Чилить" or message.text == "Чилл" or message.text == "Чил":
-            bot.send_message(message.chat.id, opred.chill)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.chillpr)
+            fich.chill(message)
         elif message.text == "Байтить":
-            bot.send_message(message.chat.id, opred.bait)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.baitpr)
+            fich.bait(message)
         elif message.text == "Форсить":
-            bot.send_message(message.chat.id, opred.fors)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.forpr)
+            fich.fors(message)
         elif message.text == "Варик":
-            bot.send_message(message.chat.id, opred.varic)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.varicpr)
+            fich.varic(message)
         elif message.text == "Душнила" or message.text == "Душный":
-            bot.send_message(message.chat.id, opred.dush)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.dushpr)
+            fich.dush(message)
         elif message.text == "Жиза":
             bot.send_message(message.chat.id, opred.jiza)
         elif message.text == "Задрот":
-            bot.send_message(message.chat.id, opred.zadrot)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.zadrotpr)
+            fich.zadrot(message)
         elif message.text == "Кринж" or message.text == "Кринжовый" or message.text == "Кринжевать" :
-            bot.send_message(message.chat.id, opred.kringe)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.kringepr)
+            fich.kringe(message)
         elif message.text == "Запилить":
-            bot.send_message(message.chat.id, opred.pil)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.pilpr)
+            fich.pil(message)
         elif message.text == "Пруфы":
-            bot.send_message(message.chat.id, opred.pruf)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.prufpr)
+            fich.pruf(message)
         elif message.text == "Чекать":
-            bot.send_message(message.chat.id, opred.chec)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.checpr)
+            fich.check(message)
         elif message.text == "Читер":
-            bot.send_message(message.chat.id, opred.chiter)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.chiterpr)
+            fich.chiter(message)
         elif message.text == "ЧСВ":
-            bot.send_message(message.chat.id, opred.csv)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.csvpr)
+            fich.csv(message)
         elif message.text == "Мем":
-            bot.send_message(message.chat.id, opred.mem)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.mempr)
+            fich.mem(message)
         elif message.text == "Фрик":
-            bot.send_message(message.chat.id, opred.frik)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.fricpr)
+            fich.fric(message)
         elif message.text == "Альтушка":
-            bot.send_message(message.chat.id, opred.alit)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.alitpr)
+            fich.alit(message)
         elif message.text == "Муд":
             bot.send_message(message.chat.id, opred.mud)
         elif message.text == "Донатить" or message.text == "Донат":
-            bot.send_message(message.chat.id, opred.donation)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.donpr)
+            fich.don(message)
         elif message.text == "Зашквар" or message.text == "Зашкварный":
-            bot.send_message(message.chat.id, opred.zashkvar)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.zashkvarpr)
+            fich.zashkvar(message)
         elif message.text == "Зумер":
             bot.send_message(message.chat.id, opred.zum)
         elif message.text == "Пушка":
@@ -136,49 +88,46 @@ def lalala(message):
         elif message.text == "Рак":
             bot.send_message(message.chat.id, opred.rak)
         elif message.text == "Рандом" or message.text == "Рандомный":
-            bot.send_message(message.chat.id, opred.rand)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.randpr)
+            fich.rand(message)
         elif message.text == "Хейтер" or message.text == "Хейтерить":
-            bot.send_message(message.chat.id, opred.heit)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.heitpr)
+            fich.hait(message)
         elif message.text == "Ивейтить":
             bot.send_message(message.chat.id, opred.invate)
         elif message.text == "ЛС":
-            bot.send_message(message.chat.id, opred.ls)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.lspr)
+            fich.ls(message)
         elif message.text == "Мерч" or message.text == "Мерчовка":
-            bot.send_message(message.chat.id, opred.merch)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.merchpr)
+            fich.merch(message)
         elif message.text == "Мьют":
-            bot.send_message(message.chat.id, opred.mut)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.mutpr)
+            fich.mut(message)
         elif message.text == "Рофл" or message.text == "Рофлить" or message.text == "Рофельный":
-            bot.send_message(message.chat.id, opred.rofl)
-            bot.send_message(message.chat.id, "Пример:")
-            bot.send_message(message.chat.id, primer.roflpr)
+            fich.rofl(message)
         elif message.text == "Сигма":
-            bot.send_message(message.chat.id, opred.sigma)
+            fich.sigma(message)
         elif message.text == "Стэнить":
-            bot.send_message(message.chat.id, opred.stem)
+            fich.stem(message)
         elif message.text == "Тейк":
-            bot.send_message(message.chat.id, opred.ttik)
+            fich.tik(message)
         elif message.text == "Топ" or message.text == "Топовый":
-            bot.send_message(message.chat.id, opred.top)
+            fich.top(message)
         elif message.text == "Треш" or message.text == "Трешовый":
-            bot.send_message(message.chat.id, opred.tresh)
+            fich.tresh(message)
         elif message.text == "Ту мач":
-            bot.send_message(message.chat.id, opred.tu)
+            fich.tu(message)
         elif message.text == "Фича":
-            bot.send_message(message.chat.id, opred.ficha)
+            fich.ficha(message)
         elif message.text == "Шарить":
-            bot.send_message(message.chat.id, opred.shar)
+            fich.sharit(message)
+        elif message.text == "Баг":
+            fich.bag(message)
+        elif message.text == "Буллинг" or message.text == "Буллить" or message.text == "Булинг" or message.text == "Булить":
+            fich.bull(message)
+        elif message.text == "Краш" or message.text == "Крашиха":
+            fich.krash(message)
+        elif message.text == "Ливнуть":
+            fich.liv(message)
         else:
             bot.send_message(message.chat.id, "К сожалению, я не знаю данного слова.")
 
 bot.polling(none_stop=True)
+
 
