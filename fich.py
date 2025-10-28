@@ -1,0 +1,177 @@
+import telebot
+import opred
+import primer
+import tok
+
+bot = telebot.TeleBot(tok.token)
+
+def vibe(message):
+    bot.send_message(message.chat.id, opred.vibe)
+    bot.send_message(message.chat.id, primer.vibepr)
+    bot.send_message(message.chat.id, "Так же слово Вайб используется в словосочитаниях ПЛЮС ВАЙБ и МИНУС ВАЙБ")
+    bot.send_message(message.chat.id, "Минус вайб-ситуация огорчает,ухудшается общее эмоциональное состояние")
+    bot.send_message(message.chat.id, "Плюс вайб-настроение поднимается,ситуация порадовала")
+def imba(message):
+    bot.send_message(message.chat.id, opred.imba)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.imbapr)
+def krip(message):
+    bot.send_message(message.chat.id, opred.krip)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.krippr)
+def lim(message):
+    bot.send_message(message.chat.id, opred.lim)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.limpr)
+def sas(message):
+    bot.send_message(message.chat.id, opred.sas)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.saspr)
+def shim(message):
+    bot.send_message(message.chat.id, opred.shim)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.shimpr)
+def ship(message):
+    bot.send_message(message.chat.id, opred.ship)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.shippr)
+def chill(message):
+    bot.send_message(message.chat.id, opred.chill)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.chillpr)
+def bait(message):
+    bot.send_message(message.chat.id, opred.bait)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.baitpr)
+def fors(message):
+    bot.send_message(message.chat.id, opred.fors)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.forpr)
+def varic(message):
+    bot.send_message(message.chat.id, opred.varic)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.varicpr)
+def dush(message):
+    bot.send_message(message.chat.id, opred.dush)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.dushpr)
+def zadrot(message):
+    bot.send_message(message.chat.id, opred.zadrot)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.zadrotpr)
+def kringe(message):
+    bot.send_message(message.chat.id, opred.kringe)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.kringepr)
+def pil(message):
+    bot.send_message(message.chat.id, opred.pil)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.pilpr)
+def pruf(message):
+    bot.send_message(message.chat.id, opred.pruf)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.prufpr)
+def check(message):
+    bot.send_message(message.chat.id, opred.chec)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.checpr)
+def chiter(message):
+    bot.send_message(message.chat.id, opred.chiter)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.chiterpr)
+def csv(message):
+    bot.send_message(message.chat.id, opred.csv)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.csvpr)
+def mem(message):
+    bot.send_message(message.chat.id, opred.mem)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.mempr)
+def fric(message):
+    bot.send_message(message.chat.id, opred.frik)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.fricpr)
+def alit(message):
+    bot.send_message(message.chat.id, opred.alit)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.alitpr)
+def don(message):
+    bot.send_message(message.chat.id, opred.donation)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.donpr)
+def zashkvar(message):
+    bot.send_message(message.chat.id, opred.zashkvar)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.zashkvarpr)
+def rand(message):
+    bot.send_message(message.chat.id, opred.rand)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.randpr)
+def hait(message):
+    bot.send_message(message.chat.id, opred.heit)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.heitpr)
+def ls(message):
+    bot.send_message(message.chat.id, opred.ls)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.lspr)
+def merch(message):
+    bot.send_message(message.chat.id, opred.merch)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.merchpr)
+def mut(message):
+    bot.send_message(message.chat.id, opred.mut)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.mutpr)
+def rofl(message):
+    bot.send_message(message.chat.id, opred.rofl)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.roflpr)
+def bag(message):
+    bot.send_message(message.chat.id, opred.bag)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.bag)
+def sigma(message):
+    bot.send_message(message.chat.id, opred.sigma)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.sigma)
+def stem(message):
+    bot.send_message(message.chat.id, opred.stem)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.stem)
+def tik(message):
+    bot.send_message(message.chat.id, opred.ttik)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.teim)
+def top(message):
+    bot.send_message(message.chat.id, opred.top)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.top)
+def tresh(message):
+    bot.send_message(message.chat.id, opred.tresh)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.tresh)
+def tu(message):
+    bot.send_message(message.chat.id, opred.tu)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.tu)
+def ficha(message):
+    bot.send_message(message.chat.id, opred.ficha)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.ficha)
+def sharit(message):
+    bot.send_message(message.chat.id, opred.shar)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.sharit)
+def bull(message):
+    bot.send_message(message.chat.id, opred.bull)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.bull)
+def krash(message):
+    bot.send_message(message.chat.id, opred.krash)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.krash)
+def liv(message):
+    bot.send_message(message.chat.id, opred.liv)
+    bot.send_message(message.chat.id, "Пример:")
+    bot.send_message(message.chat.id, primer.liv)
