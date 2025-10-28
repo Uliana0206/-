@@ -1,8 +1,9 @@
 import telebot
 from telebot import types
+import opred
+import tok
 
-
-bot = telebot.TeleBot('8427573354:AAHb2MahdqL4C1zg7inxXeQ05xarMbLZxRk')
+bot = telebot.TeleBot(tok.token)
 
 @bot.message_handler(commands=['start'])
 def main(message):
@@ -13,11 +14,10 @@ def main(message):
     markup.add(types.InlineKeyboardButton('Нет', callback_data='no'))
     bot.send_message(message.chat.id, 'Вам нужен список слов, которые я знаю?', reply_markup=markup)
 
-
     @bot.callback_query_handler(func=lambda callback: True)
     def callback(callback):
         if callback.data == "yes":
-            bot.send_message(message.chat.id, "Список:Альтушка, Байтить, Вайб, Варик, Душнила, Жиза, Задрот, Запилить, Имба, Кринж, Криповый, Лейм, Мем, Мем, Пруфычекать, Сас, Форсить, Фрик, Чиллить, Читер, ЧСВ, Шеймить, Шипперить")
+            bot.send_message(message.chat.id, "Список:Альтушка, Байтить, Вайб, Варик, Душнила, Жиза, Задрот, Запилить, Имба, Кринж, Криповый, Лейм, Мем, Мем, Пруфы, Чекать, Сас, Форсить, Фрик, Чиллить, Читер, ЧСВ, Шеймить, Шипперить")
             bot.send_message(message.chat.id, "Введите интересующее вас слово с заглавной буквы")
         else:
             bot.send_message(message.chat.id, "Введите интересующее вас слово с заглавной буквы")
@@ -27,56 +27,56 @@ def main(message):
 def lalala(message):
     if message.chat.type == 'private':
         if message.text == "Вайб" or message.text == "Плюс вайб" or message.text == "Минус вайб":
-            bot.send_message(message.chat.id, "Вайб — атмосфера или настроение")
+            bot.send_message(message.chat.id, opred.vibe)
             bot.send_message(message.chat.id, "Так же слово Вайб используется в словосочитаниях ПЛЮС ВАЙБ и МИНУС ВАЙБ")
             bot.send_message(message.chat.id, "Минус вайб-ситуация огорчает,ухудшается общее эмоциональное состояние")
             bot.send_message(message.chat.id, "Плюс вайб-настроение поднимается,ситуация порадовала")
         elif message.text == "Имба":
-            bot.send_message(message.chat.id, "Имба — мощный, выдающийся по характеристикам, круто, классно")
+            bot.send_message(message.chat.id, opred.imba)
         elif message.text == "Криповый":
-            bot.send_message(message.chat.id, "Криповый — очень страшный, вызывающий ужас")
+            bot.send_message(message.chat.id, opred.krip)
         elif message.text == "Лейм":
-            bot.send_message(message.chat.id, "Лейм — нечто скучное, банальное, унылое, скучный, неинтересный человек")
+            bot.send_message(message.chat.id, opred.lim)
         elif message.text == "Сас" or message.text == "Сасный":
-            bot.send_message(message.chat.id, "Сас, сасный — красивый, эффектный, притягательный, вызывающий влечение, сомнительный, подозрительный")
+            bot.send_message(message.chat.id, opred.sas)
         elif message.text == "Шеймить":
-            bot.send_message(message.chat.id, "Шеймить — пристыдить кого-либо")
-        elif message.text == "Шипперить":
-           bot.send_message(message.chat.id, "Шипперить — придумывать, что какие-то известные люди или персонажи состоят в романтических отношениях, хотя в действительности это не так")
+            bot.send_message(message.chat.id, opred.shim)
+        elif message.text == "Шипперить" or message.text == "Шип" or message.text == "Шипирить" or message.text == "Шипп":
+           bot.send_message(message.chat.id, opred.ship)
         elif message.text == "Чиллить" or message.text == "Чилить" or message.text == "Чилл" or message.text == "Чил":
-            bot.send_message(message.chat.id, "Чилить — отдыхать, расслабляться, приятно проводить время")
+            bot.send_message(message.chat.id, opred.chill)
         elif message.text == "Байтить":
-            bot.send_message(message.chat.id, "Байтить- приманивать,провоцировать")
+            bot.send_message(message.chat.id, opred.bait)
         elif message.text == "Форсить":
-            bot.send_message(message.chat.id, "Форсить — продвигать, популяризировать")
+            bot.send_message(message.chat.id, opred.fors)
         elif message.text == "Варик":
-            bot.send_message(message.chat.id, "Варик — вариант развития событий")
+            bot.send_message(message.chat.id, opred.varic)
         elif message.text == "Душнила":
-            bot.send_message(message.chat.id, "Душнила — скучный и нудный человек в компании, постоянно высказывающий непопулярное мнение")
+            bot.send_message(message.chat.id, opred.dush)
         elif message.text == "Жиза":
-            bot.send_message(message.chat.id, "Жиза — ситуация, актуальная для слушателя")
+            bot.send_message(message.chat.id, opred.jiza)
         elif message.text == "Задрот":
-            bot.send_message(message.chat.id, "Задрот — человек, который много времени тратит на компьютерные игры")
+            bot.send_message(message.chat.id, opred.zadrot)
         elif message.text == "Кринж":
-            bot.send_message(message.chat.id, "Кринж - это стыд или смущение за действия и слова другого человека")
+            bot.send_message(message.chat.id, opred.kringe)
         elif message.text == "Запилить":
-            bot.send_message(message.chat.id, 'Запилить — опубликовать определённое фото или видео в интернет')
+            bot.send_message(message.chat.id, opred.pil)
         elif message.text == "Пруфы":
-            bot.send_message(message.chat.id, 'Пруфы — доказательства')
+            bot.send_message(message.chat.id, opred.pruf)
         elif message.text == "Чекать":
-            bot.send_message(message.chat.id, 'Чекать — проверять, смотреть')
+            bot.send_message(message.chat.id, opred.chec)
         elif message.text == "Читер":
-            bot.send_message(message.chat.id, 'Читер — человек, использующий жульнические приёмы в компьютерных или настольных играх или в жизни')
+            bot.send_message(message.chat.id, opred.chiter)
         elif message.text == "ЧСВ":
-            bot.send_message(message.chat.id, 'ЧСВ — сокращение фразы «чувство собственной важности», как правило используется в значении «надменный»')
+            bot.send_message(message.chat.id, opred.csv)
         elif message.text == "Мем":
-            bot.send_message(message.chat.id, 'Мем — смешная картинка или видеоролик в интернете')
+            bot.send_message(message.chat.id, opred.mem)
         elif message.text == "Фрик":
-            bot.send_message(message.chat.id, 'Фрик — слово, которое обозначает странного или эксцентричного человека')
+            bot.send_message(message.chat.id, opred.frik)
         elif message.text == "Альтушка":
-            bot.send_message(message.chat.id, 'Альтушка - девушка,которая старается выделиться эпотажной внешностью и поведением')
+            bot.send_message(message.chat.id, opred.alit)
         elif message.text == "Муд":
-            bot.send_message(message.chat.id, 'Муд — настроение или состояние')
+            bot.send_message(message.chat.id, opred.mud)
         else:
             bot.send_message(message.chat.id, "К сожалению, я не знаю данного слова.")
 
@@ -84,3 +84,4 @@ def lalala(message):
 
 
 bot.polling(none_stop=True)
+
