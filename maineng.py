@@ -27,7 +27,7 @@ def main(message):
 @bot.message_handler(content_types=['text'])
 def lalala(message):
     if message.chat.type == 'private':
-        if message.text == "Вайб" or message.text == "Плюс вайб" or message.text == "Минус вайб":
+        if message.text == "Вайб" or message.text == "Плюс вайб" or message.text == "Минус вайб" or message.text == "Вайбовый":
             bot.send_message(message.chat.id, opred.vibe)
             bot.send_message(message.chat.id, primer.vibepr)
             bot.send_message(message.chat.id, "Так же слово Вайб используется в словосочитаниях ПЛЮС ВАЙБ и МИНУС ВАЙБ")
@@ -181,3 +181,4 @@ def lalala(message):
             bot.send_message(message.chat.id, "К сожалению, я не знаю данного слова.")
 
 bot.polling(none_stop=True)
+
